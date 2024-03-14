@@ -1,12 +1,13 @@
 from setuptools import setup, find_packages
 
-# Read the contents of your README file
-with open('README.md', encoding='utf-8') as f:
-    long_description = f.read()
+# read the contents of your README file
+from pathlib import Path
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="gh0st-SimpleDiagramTool",
-    version="0.1",
+    version="1.0.0",
     packages=find_packages(),
     install_requires=[
         "matplotlib",
