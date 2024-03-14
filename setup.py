@@ -6,7 +6,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text(encoding='utf-8')
 
 setup(
-    name="gh0st-SimpleDiagramTool",
+    name="Gh0stSimpleDiagramTool",
     version="0.0.1",
     packages=find_packages(),
     install_requires=[
