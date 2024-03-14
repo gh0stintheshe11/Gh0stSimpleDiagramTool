@@ -3,7 +3,7 @@
 Here's how to create a simple diagram with a block, a line, and an arrow:
 
 ```python
-from your_library_name import SimpleDiagramTool
+from gh0st_SimpleDiagramTool import SimpleDiagramTool
 
 tool = SimpleDiagramTool()
 tool.add_block((0.1, 0.1), (0.2, 0.1), "Start", boundary_color='blue', text_size=12)
