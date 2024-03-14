@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="gh0st_Simple_Diagram_Tool",
+    name="gh0st-SimpleDiagramTool",
     version="0.1",
     packages=find_packages(),
     install_requires=[
