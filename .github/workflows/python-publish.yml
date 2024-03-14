@@ -8,29 +8,29 @@ permissions:
   contents: read
 
 jobs:
-    pypi-publish:
-      name: upload release to PyPI
-      runs-on: ubuntu-latest
-      environment: release
-      permissions:
-        # IMPORTANT: this permission is mandatory for trusted publishing
-        id-token: write
-      
-      steps:
-      - uses: actions/checkout@v3
-  
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
-  
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip setuptools wheel twine
-          # The above line ensures that you have the latest versions of setuptools and wheel
-  
-      - name: Build package
-        run: python -m build
-  
-      - name: pypi-publish
-        uses: pypa/gh-action-pypi-publish@v1.8.14
+  pypi-publish:
+    name: upload release to PyPI
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools wheel twine build
+        # Now explicitly includes the build module
+
+    - name: Build package
+      run: python -m build
+
+    - name: pypi-publish
+      uses: pypa/gh-action-pypi-publish@v1.8.14
