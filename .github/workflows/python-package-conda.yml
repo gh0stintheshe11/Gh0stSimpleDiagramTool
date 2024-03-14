@@ -16,6 +16,11 @@ jobs:
         auto-update-conda: true
         auto-activate-base: true
 
+    - name: Create and activate project-specific environment
+      run: |
+        conda create --name myprojectenv python=3.11
+        conda activate myprojectenv
+
     - name: Install dependencies
       run: |
         conda install flake8 pytest
