@@ -8,23 +8,34 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - name: Set up Conda environment
       uses: conda-incubator/setup-miniconda@v2
       with:
         python-version: 3.11
-        environment-file: environment.yml
         activate-environment: myprojectenv
         auto-update-conda: true
         auto-activate-base: false
+        environment-name: myprojectenv
 
     - name: Install dependencies
       run: |
-        conda install flake8 pytest -y
-        # You can also add other dependencies here
+        conda install -n myprojectenv flake8 pytest -y
+        # Add any other dependencies here, specifying the environment with -n myprojectenv
+
+    - name: Activate environment
+      shell: bash -l {0}
+      run: |
+        echo "Environment activated."
+        # This step ensures that your environment is activated. Commands here will run inside the environment.
 
     - name: Lint with flake8
-      run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      shell: bash -l {0}
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Test with pytest
-      run: pytest
+      shell: bash -l {0}
+      run: |
+        pytest
