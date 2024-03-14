@@ -2,6 +2,16 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
 class SimpleDiagramTool:
+    """
+    A simple diagram tool for creating diagrams with rectangular blocks, lines, and arrows.
+
+    Attributes:
+    - length: The length of the diagram.
+    - width: The width of the diagram.
+    - fig: The figure object for the diagram.
+    - ax: The axes object for the diagram.
+    """
+
     def __init__(self, length, width):
         self.length = length
         self.width = width
