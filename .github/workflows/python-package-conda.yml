@@ -1,6 +1,7 @@
 name: Python Package using Conda
 
-on: [published]
+on: 
+  release: [published]
 
 jobs:
   build-linux:
