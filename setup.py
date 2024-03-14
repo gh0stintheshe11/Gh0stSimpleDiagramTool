@@ -12,5 +12,5 @@ setup(
     description="A simple diagram drawing tool",
     license="MIT",
     keywords="diagram flowchart matplotlib",
-    url="http://github.com/yourusername/your_library_name",  # Replace with your actual GitHub URL
+    url="https://github.com/gh0stintheshe11/gh0st-SImpleDiagramTool",  # Replace with your actual GitHub URL
 )
